@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reaction Speed Test</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="wrap">
+    <h1>⚡ Reaction Speed Test</h1>
+    <p class="sub">Click as soon as the screen turns <strong>GO</strong>. Reaction time will bemeasured in milliseconds.</p>
+    <div class="hud">
+      <div>⏱️ Last: <span id="last">—</span> ms</div>
+      <div>📊 Best: <span id="best">—</span> ms</div>
+      <div>📈 Avg (5): <span id="avg">—</span> ms</div>
+      <div>🧮 Trials: <span id="trials">0</span></div>
+    </div>
+    <div class="controls">
+      <button id="startBtn">Start</button>
+      <button id="resetBtn" class="ghost">Reset</button>
+      <label class="delay">
+        Random delay
+        <select id="delayRange">
+          <option value="short">Short (0.6–1.4s)</option>
+          <option value="medium" selected>Medium (1–3s)</option>
+          <option value="long">Long (2–5s)</option>
+        </select>
+      </label>
+      <label class="rounds">
+        Rounds
+        <select id="rounds">
+          <option value="5" selected>5</option>
+          <option value="10">10</option>
+          <option value="∞">∞ (endless)</option>
+        </select>
+      </label>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="stage" class="stage" role="button" tabindex="0" aria-label="Reaction stage">
+      <div class="state idle" id="stateText">Click START</div>
+      <div class="hint" id="hint">Wait for GREEN, then click or press space/enter.</div>
+    </section>
+
+    <div class="log">
+      <h3>Recent Times</h3>
+      <ul id="list"></ul>
+    </div>
+  </main>
+
+  <footer class="wrap footer">
+    <p>Built with HTML, CSS, and JavaScript. <a href="README.md">README</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
